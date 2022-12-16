@@ -6,4 +6,5 @@ Im not so professional with Java so sorry if the code haves some failures, this 
 
 For compile uses in Terminal linux or Windows "javac DvmapDecrypt.java"
 
-And for uses the compiled code "C:\java Decrypt <file_path>"
+And for uses the compiled code "Java Decrypt <file_path>"
+The code decrypt the file and delete the original encrypted
