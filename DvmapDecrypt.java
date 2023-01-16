@@ -47,17 +47,21 @@ public class Decrypt {
             }
         }
 
-        // Write the decrypted bytes to the same location as the original file
-        FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
+        // Create a new file name with the .zip extension
+        File originalFile = new File(filePath);
+        String newFilePath = filePath.substring(0, filePath.lastIndexOf(".")) + ".zip";
+
+        // Write the decrypted bytes to the new file
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(newFilePath));
         fileOutputStream.write(fileBytes);
         fileOutputStream.close();
     }
 
     private static byte[] readFile(String filePath) throws IOException {
-    InputStream inputStream = new FileInputStream(filePath);
-    byte[] fileBytes = new byte[inputStream.available()];
-    inputStream.read(fileBytes);
-    inputStream.close();
-    return fileBytes;
-}
+        InputStream inputStream = new FileInputStream(filePath);
+        byte[] fileBytes = new byte[inputStream.available()];
+        inputStream.read(fileBytes);
+        inputStream.close();
+        return fileBytes;
+    }
 }
